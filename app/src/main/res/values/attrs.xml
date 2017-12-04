@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PrinceView">
+
+        <!-- 左侧文字-->
+        <attr name="pv_left_text" format="string" />
+        <!-- 左侧文字大小-->
+        <attr name="pv_left_textSize" format="dimension" />
+        <!-- 左侧文字颜色-->
+        <attr name="pv_left_textColor" format="color" />
+        <!-- 左侧图片-->
+        <attr name="pv_leftDrawable" format="reference" />
+        <!-- 左侧图片文字间距-->
+        <attr name="pv_drawablePadding" format="dimension" />
+        <!-- 右侧文字-->
+        <attr name="pv_rigth_text" format="string" />
+        <!-- 右侧文字大小-->
+        <attr name="pv_rigth_textSize" format="dimension" />
+        <!-- 右侧文字颜色-->
+        <attr name="pv_rigth_textColor" format="color" />
+        <!--左侧文字的上下padding-->
+        <attr name="pv_rigthText_paddingVertical" format="dimension" />
+        <!--左侧文字的左右padding-->
+        <attr name="pv_rigthText_paddingHorizontal" format="dimension" />
+        <!--左侧文字的背景-->
+        <attr name="pv_rigthText_background" format="color" />
+        <!-- 箭头文字间距-->
+        <attr name="pv_arrowPadding" format="dimension" />
+        <!-- 箭头眼图片-->
+        <attr name="pv_arrowDrawable" format="reference" />
+
+        <!-- 线的颜色-->
+        <attr name="pv_lineColor" format="color" />
+        <!-- 上线是否显示-->
+        <attr name="pv_aboveLine_visibility" format="enum">
+            <enum name="visible" value="0" />
+            <enum name="invisible" value="4" />
+            <enum name="gone" value="8" />
+        </attr>
+        <!-- 下线是否显示-->
+        <attr name="pv_belowLine_visibility" format="enum">
+            <enum name="visible" value="0" />
+            <enum name="invisible" value="4" />
+            <enum name="gone" value="8" />
+        </attr>
+        <!-- 上线距离左边间距-->
+        <attr name="pv_aboveLineLeftMargin" format="dimension" />
+        <!-- 上线距离右边间距-->
+        <attr name="pv_aboveLineRightMargin" format="dimension" />
+        <!-- 下线距离左边间距-->
+        <attr name="pv_belowLineLeftMargin" format="dimension" />
+        <!-- 下线距离右边间距-->
+        <attr name="pv_belowLineRightMargin" format="dimension" />
+        <!-- 线高度-->
+        <attr name="pv_lineHeight" format="dimension" />
+    </declare-styleable>
+
+</resources>
