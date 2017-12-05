@@ -1,39 +1,236 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
-    android:orientation="vertical">
+    android:background="@color/bg_color"
+    android:scrollbars="none">
 
-
-    <com.lidiwo.princeview.PrinceView
-        android:id="@+id/pv_aaa"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/custom_item_bg_selector"
-        android:padding="15dp"
-        app:pv_aboveLineLeftMargin="20dp"
-        app:pv_aboveLineRightMargin="40dp"
-        app:pv_aboveLine_visibility="visible"
-        app:pv_arrowDrawable="@drawable/arrow_more"
-        app:pv_arrowPadding="10dp"
-        app:pv_belowLineLeftMargin="40dp"
-        app:pv_belowLineRightMargin="20dp"
-        app:pv_belowLine_visibility="visible"
-        app:pv_drawablePadding="20dp"
-        app:pv_leftDrawable="@drawable/photo_album"
-        app:pv_left_text="相册"
-        app:pv_left_textColor="@android:color/holo_green_light"
-        app:pv_left_textSize="15sp"
-        app:pv_lineColor="@android:color/black"
-        app:pv_lineHeight="1dp"
-        app:pv_rigth_text="非常十点多"
-        app:pv_rigthText_paddingHorizontal="10dp"
-        app:pv_rigthText_paddingVertical="5dp"
-        app:pv_rigthText_background="@android:color/black"
-        app:pv_rigth_textColor="#ff0000"
-        app:pv_rigth_textSize="15sp" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-</LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:text="一般条目"
+            android:textColor="@color/left_text_color"
+            android:textSize="20dp" />
+
+        <com.lidiwo.princeview.PrinceView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_item_bg_selector"
+            android:padding="15dp"
+            app:pv_arrowDrawable="@drawable/arrow_more"
+            app:pv_arrowPadding="10dp"
+            app:pv_drawablePadding="8dp"
+            app:pv_leftDrawable="@drawable/photo_album"
+            app:pv_left_text="相册"
+            app:pv_left_textColor="@color/left_text_color"
+            app:pv_left_textSize="15sp"
+            app:pv_lineColor="@color/line_color"
+            app:pv_lineHeight="1px" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:text="右边有文字"
+            android:textColor="@color/left_text_color"
+            android:textSize="20dp" />
+
+
+        <com.lidiwo.princeview.PrinceView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_item_bg_selector"
+            android:padding="15dp"
+            app:pv_arrowDrawable="@drawable/arrow_more"
+            app:pv_arrowPadding="10dp"
+            app:pv_drawablePadding="8dp"
+            app:pv_leftDrawable="@drawable/photo_album"
+            app:pv_left_text="相册"
+            app:pv_left_textColor="@color/left_text_color"
+            app:pv_left_textSize="15sp"
+            app:pv_lineColor="@color/line_color"
+            app:pv_lineHeight="1px"
+            app:pv_rigthText_background="@color/right_text_bg"
+            app:pv_rigthText_paddingHorizontal="10dp"
+            app:pv_rigthText_paddingVertical="5dp"
+            app:pv_rigth_text="V1.0.0"
+            app:pv_rigth_textColor="@color/right_text_color"
+            app:pv_rigth_textSize="15sp" />
+
+
+        <com.lidiwo.princeview.PrinceView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_item_bg_selector"
+            android:padding="15dp"
+            app:pv_arrowDrawable="@drawable/arrow_more"
+            app:pv_arrowPadding="10dp"
+            app:pv_drawablePadding="8dp"
+            app:pv_leftDrawable="@drawable/photo_album"
+            app:pv_left_text="相册"
+            app:pv_left_textColor="@color/left_text_color"
+            app:pv_left_textSize="15sp"
+            app:pv_lineColor="@color/line_color"
+            app:pv_lineHeight="1px"
+            app:pv_rigthText_background="@drawable/right_text_bg_shape"
+            app:pv_rigthText_paddingHorizontal="10dp"
+            app:pv_rigthText_paddingVertical="5dp"
+            app:pv_rigth_text="V1.0.0"
+            app:pv_rigth_textColor="@color/right_text_color"
+            app:pv_rigth_textSize="15sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:text="右边有图片(没有上线和下线)"
+            android:textColor="@color/left_text_color"
+            android:textSize="20dp" />
+
+        <com.lidiwo.princeview.PrinceView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_item_bg_selector"
+            android:padding="15dp"
+            app:pv_arrowDrawable="@drawable/arrow_more"
+            app:pv_arrowPadding="10dp"
+            app:pv_drawablePadding="8dp"
+            app:pv_leftDrawable="@drawable/photo_album"
+            app:pv_rightDrawable="@drawable/qr_code" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:text="连续多个"
+            android:textColor="@color/left_text_color"
+            android:textSize="20dp" />
+
+
+        <com.lidiwo.princeview.PrinceView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_item_bg_selector"
+            android:padding="15dp"
+            app:pv_arrowDrawable="@drawable/arrow_more"
+            app:pv_arrowPadding="10dp"
+            app:pv_drawablePadding="8dp"
+            app:pv_leftDrawable="@drawable/photo_album"
+            app:pv_left_text="相册"
+            app:pv_belowLine_visibility="gone"
+            app:pv_left_textColor="@color/left_text_color"
+            app:pv_left_textSize="15sp"
+            app:pv_lineColor="@color/line_color"
+            app:pv_lineHeight="1px" />
+
+        <com.lidiwo.princeview.PrinceView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_item_bg_selector"
+            android:padding="15dp"
+            app:pv_arrowDrawable="@drawable/arrow_more"
+            app:pv_arrowPadding="10dp"
+            app:pv_drawablePadding="8dp"
+            app:pv_leftDrawable="@drawable/photo_album"
+            app:pv_left_text="相册"
+            app:pv_belowLine_visibility="gone"
+            app:pv_left_textColor="@color/left_text_color"
+            app:pv_left_textSize="15sp"
+            app:pv_lineColor="@color/line_color"
+            app:pv_lineHeight="1px" />
+
+        <com.lidiwo.princeview.PrinceView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_item_bg_selector"
+            android:padding="15dp"
+            app:pv_arrowDrawable="@drawable/arrow_more"
+            app:pv_arrowPadding="10dp"
+            app:pv_drawablePadding="8dp"
+            app:pv_leftDrawable="@drawable/photo_album"
+            app:pv_left_text="相册"
+            app:pv_left_textColor="@color/left_text_color"
+            app:pv_left_textSize="15sp"
+            app:pv_lineColor="@color/line_color"
+            app:pv_lineHeight="1px" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:text="全部属性配置"
+            android:textColor="@color/left_text_color"
+            android:textSize="20dp" />
+
+        <com.lidiwo.princeview.PrinceView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_item_bg_selector"
+            android:padding="15dp"
+            app:pv_aboveLineLeftMargin="20dp"
+            app:pv_aboveLineRightMargin="40dp"
+            app:pv_aboveLine_visibility="visible"
+            app:pv_arrowDrawable="@drawable/arrow_more"
+            app:pv_arrowPadding="10dp"
+            app:pv_belowLineLeftMargin="40dp"
+            app:pv_belowLineRightMargin="20dp"
+            app:pv_belowLine_visibility="visible"
+            app:pv_drawablePadding="20dp"
+            app:pv_leftDrawable="@drawable/photo_album"
+            app:pv_left_text="相册"
+            app:pv_left_textColor="@color/left_text_color"
+            app:pv_left_textSize="15sp"
+            app:pv_lineColor="@color/line_color"
+            app:pv_lineHeight="1px"
+            app:pv_rightDrawable="@drawable/qr_code"
+            app:pv_rigthText_background="@drawable/right_text_bg_shape"
+            app:pv_rigth_text="V1.0.0"
+            app:pv_rigthText_paddingHorizontal="10dp"
+            app:pv_rigthText_paddingVertical="5dp"
+            app:pv_rigth_textColor="@color/right_text_color"
+            app:pv_rigth_textSize="15sp" />
+
+        <com.lidiwo.princeview.PrinceView
+            android:id="@+id/pv_aaa"
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_item_bg_selector"
+            android:padding="15dp"
+            app:pv_aboveLineLeftMargin="20dp"
+            app:pv_aboveLineRightMargin="40dp"
+            app:pv_aboveLine_visibility="visible"
+            app:pv_arrowDrawable="@drawable/arrow_more"
+            app:pv_arrowPadding="10dp"
+            app:pv_belowLineLeftMargin="40dp"
+            app:pv_belowLineRightMargin="20dp"
+            app:pv_belowLine_visibility="visible"
+            app:pv_drawablePadding="20dp"
+            app:pv_leftDrawable="@drawable/photo_album"
+            app:pv_left_text="相册"
+            app:pv_left_textColor="@color/left_text_color"
+            app:pv_left_textSize="15sp"
+            app:pv_lineColor="@color/line_color"
+            app:pv_lineHeight="1px"
+            app:pv_rightDrawable="@drawable/qr_code"
+            app:pv_rigthText_background="@color/right_text_bg"
+            app:pv_rigthText_paddingHorizontal="10dp"
+            app:pv_rigthText_paddingVertical="5dp"
+            app:pv_rigth_text="V1.0.0"
+            app:pv_rigth_textColor="@color/right_text_color"
+            app:pv_rigth_textSize="15sp" />
+    </LinearLayout>
+</ScrollView>

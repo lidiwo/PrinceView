@@ -24,11 +24,12 @@
         <attr name="pv_rigthText_paddingHorizontal" format="dimension" />
         <!--左侧文字的背景-->
         <attr name="pv_rigthText_background" format="color" />
-        <!-- 箭头文字间距-->
+        <!-- 箭头文字/箭头图片间距-->
         <attr name="pv_arrowPadding" format="dimension" />
-        <!-- 箭头眼图片-->
+        <!-- 箭头图片-->
         <attr name="pv_arrowDrawable" format="reference" />
-
+        <!-- 右侧图片内容 -->
+        <attr name="pv_rightDrawable" format="reference" />
         <!-- 线的颜色-->
         <attr name="pv_lineColor" format="color" />
         <!-- 上线是否显示-->

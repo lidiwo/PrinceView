@@ -12,6 +12,7 @@ import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.sql.Array;
@@ -41,8 +42,9 @@ public class PrinceView extends View {
     private int pv_rigthText_paddingVertical; //左侧文字的上下padding
     private float pv_rigth_textSize;//右侧文字大小
     private int pv_rigth_textColor;//右侧文字颜色
-    private int pv_arrowPadding;//箭头文字间距
+    private int pv_arrowPadding;//箭头文字/箭头图片间距
     private Drawable pv_arrowDrawable;//箭头图片
+    private Drawable pv_rightDrawable;//右侧图片
     private int pv_lineColor;//线颜色
     private int pv_aboveLineLeftMargin;//上线距离左边间距
     private int pv_aboveLineRightMargin;//上线距离右边间距
@@ -51,7 +53,6 @@ public class PrinceView extends View {
     private int pv_lineHeight;//线高度
     private int pv_aboveLine_visibility;//上线是否显示
     private int pv_belowLine_visibility;//下线是否显示
-
 
     private int paddingLeft;
     private int paddingRight;
@@ -66,6 +67,8 @@ public class PrinceView extends View {
     private int belowLineHeight;
     private int rightTextHeight;
     private int rightTextWidth;
+    private int rightDrawableWidth;
+    private int rightDrawableHeight;
 
 
     public PrinceView(Context context) {
@@ -94,6 +97,7 @@ public class PrinceView extends View {
             pv_rigthText_background = attributes.getDrawable(R.styleable.PrinceView_pv_rigthText_background);
             pv_arrowPadding = attributes.getDimensionPixelSize(R.styleable.PrinceView_pv_arrowPadding, dip2px(5));
             pv_arrowDrawable = attributes.getDrawable(R.styleable.PrinceView_pv_arrowDrawable);
+            pv_rightDrawable = attributes.getDrawable(R.styleable.PrinceView_pv_rightDrawable);
             pv_lineColor = attributes.getColor(R.styleable.PrinceView_pv_lineColor, Color.BLACK);
             pv_aboveLineLeftMargin = (int) attributes.getDimension(R.styleable.PrinceView_pv_aboveLineLeftMargin, 0);
             pv_aboveLineRightMargin = (int) attributes.getDimension(R.styleable.PrinceView_pv_aboveLineRightMargin, 0);
@@ -199,7 +203,12 @@ public class PrinceView extends View {
             rightTextHeight = rightTextRect.height();
             rightTextWidth = rightTextRect.width();
         }
-        maxValue = getMaxValue(new int[]{leftDrawableHeight, leftTextHeight, arrowDrawableHeight, rightTextHeight});
+
+        //获取右侧图片尺寸
+        rightDrawableWidth = pv_rightDrawable == null ? 0 : pv_rightDrawable.getIntrinsicWidth();
+        rightDrawableHeight = pv_rightDrawable == null ? 0 : pv_rightDrawable.getIntrinsicHeight();
+
+        maxValue = getMaxValue(new int[]{leftDrawableHeight, leftTextHeight, arrowDrawableHeight, rightTextHeight, rightDrawableHeight});
     }
 
     @Override
@@ -247,13 +256,12 @@ public class PrinceView extends View {
         }
 
         //绘制右侧文字背景
-        if (pv_arrowDrawable != null) {
+        if (pv_rigthText_background != null) {
             canvas.save();
-            float arrowDrawableDx = getWidth() - arrowDrawableWidth - paddingRight-pv_arrowPadding-rightTextWidth;
+            float arrowDrawableDx = getWidth() - arrowDrawableWidth - paddingRight - pv_arrowPadding - rightTextWidth;
             float arrowDrawableDy = (maxValue - rightTextHeight) / 2 + paddingTop + aboveLineHeight;
             canvas.translate(arrowDrawableDx, arrowDrawableDy);
-
-            pv_rigthText_background.setBounds(-pv_rigthText_paddingHorizontal, -pv_rigthText_paddingVertical, rightTextWidth+pv_rigthText_paddingHorizontal, rightTextHeight+pv_rigthText_paddingVertical);
+            pv_rigthText_background.setBounds(-pv_rigthText_paddingHorizontal, -pv_rigthText_paddingVertical, rightTextWidth + pv_rigthText_paddingHorizontal, rightTextHeight + pv_rigthText_paddingVertical);
             pv_rigthText_background.draw(canvas);
             canvas.restore();
         }
@@ -277,6 +285,23 @@ public class PrinceView extends View {
             canvas.drawText(pv_rigth_text, rightTextBaseLineX, rightTextBaseLineY, rightTextPaint);
             canvas.restore();
         }
+
+        //绘制右侧图片
+        if (pv_rightDrawable != null) {
+            canvas.save();
+            float arrowDrawableDx = getWidth() - arrowDrawableWidth -pv_arrowPadding-rightDrawableWidth- paddingRight-rightTextWidth-pv_rigthText_paddingHorizontal*2;
+            float arrowDrawableDy = (maxValue - rightDrawableHeight) / 2 + paddingTop + aboveLineHeight;
+            canvas.translate(arrowDrawableDx, arrowDrawableDy);
+            pv_rightDrawable.setBounds(0, 0, rightDrawableWidth, rightDrawableHeight);
+            pv_rightDrawable.draw(canvas);
+            canvas.restore();
+        }
+
+
+//        private int rightDrawableWidth;
+//        private int rightDrawableHeight;
+//
+
 
         //绘制上下线
         canvas.save();
