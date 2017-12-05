@@ -297,12 +297,6 @@ public class PrinceView extends View {
             canvas.restore();
         }
 
-
-//        private int rightDrawableWidth;
-//        private int rightDrawableHeight;
-//
-
-
         //绘制上下线
         canvas.save();
         RectF aboveRectF = new RectF(pv_aboveLineLeftMargin, 0, getWidth() - pv_aboveLineRightMargin, aboveLineHeight);
